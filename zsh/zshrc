@@ -1,8 +1,11 @@
 # ---- Prompt ---- #
-PS1='%n%F{red} %1~%f $ '
+PS1='%F{red} %1~%f Ϟ '
+
+/data/Scripts/frases_motivadoras.sh
 
 # ---- Defaults System Variables ---- #
-EDITOR=nvim
+EDITOR=emacs
+TERM=kitty
 
 # ---- History ---- #
 HISTSIZE=1000
@@ -37,6 +40,6 @@ export PATH=/home/gaston/.local/bin:$PATH
 source $HOME/.config/zsh/auto-ls.zsh
 source $HOME/.config/zsh/alias.zsh
 source $HOME/.config/zsh/funtions.zsh
-source $HOME/.config/zsh/zsh-fzf-history-search.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+alias search='find /data -type f | fzf | xargs -I{} nvim {}'
