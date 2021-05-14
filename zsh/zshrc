@@ -1,15 +1,16 @@
 # ---- Prompt ---- #
-PS1='%F{red} %1~%f Ϟ '
 
-/data/Scripts/frases_motivadoras.sh
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_PROMPT_SEPARATE_LINE=false
+SPACESHIP_CHAR_SYMBOL=' '
 
 # ---- Defaults System Variables ---- #
 EDITOR=emacs
-TERM=kitty
+TERM=alacritty
 
 # ---- History ---- #
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # Use modern completion system
@@ -35,11 +36,17 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # ---- Exports ---- #
 export PATH=/home/gaston/.local/bin:$PATH
+export PATH=/data/appImages:$PATH
+export PATH=/opt/texlive/2021/bin/x86_64-linux:$PATH
 
 # ---- Sources ---- #
+source $HOME/.config/zsh/spaceship-prompt/spaceship.zsh
 source $HOME/.config/zsh/auto-ls.zsh
 source $HOME/.config/zsh/alias.zsh
 source $HOME/.config/zsh/funtions.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias search='find /data -type f | fzf | xargs -I{} nvim {}'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_COMPLETION_OPTS='--cycle --height=20% --layout=reverse --border=rounded --margin=5%'
