@@ -8,6 +8,10 @@ SPACESHIP_CHAR_SYMBOL=' '
 EDITOR=emacs
 TERM=alacritty
 
+# ---- nnn ---- #
+export NNN_BMS='d:/data;s:/data/School;D:~/Downloads/;e:/data/Entropia'
+
+
 # ---- History ---- #
 HISTSIZE=10000
 SAVEHIST=10000
@@ -43,7 +47,6 @@ export PATH=/opt/texlive/2021/bin/x86_64-linux:$PATH
 source $HOME/.config/zsh/spaceship-prompt/spaceship.zsh
 source $HOME/.config/zsh/auto-ls.zsh
 source $HOME/.config/zsh/alias.zsh
-source $HOME/.config/zsh/funtions.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias search='find /data -type f | fzf | xargs -I{} nvim {}'

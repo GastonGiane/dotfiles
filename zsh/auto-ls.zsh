@@ -19,7 +19,7 @@ fi
 
 
 auto-ls-ls () {
-  exa --color=always --group-directories-first
+  exa --color=always --group-directories-first --icons
   [[ $AUTO_LS_NEWLINE != false ]] && echo ""
 }
 
